@@ -16,6 +16,9 @@ html {
     line-height: 1.4;
 }
 
+body {
+  background-color: rgb(154, 177, 223);
+}
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
