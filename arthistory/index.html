@@ -17,18 +17,27 @@
 
 <body class="ph3">
 
-  <!-- audio looper autostarts when page is loaded. -->
+
   <script>
-  var sound = new Howl({
+  var sound1 = new Howl({
     src: ['minimal.mp3']
   });
-  sound.play();
+  sound1.play();
+  var sound2 = new Howl({
+    src: ['minimal2.mp3']
+  });
+  sound2.play();
+  function mouseEvent(e) {
+      var x = e.offsetX;
+      if (x < 200) {
+        sound1.play();
+      }
+      else {
+        sound2.play();
+      }
   </script>
 
-<!--  <audio autoplay loop>
-    <source src="minimal.mp3" type="audio/mpeg">
-    Your browser is too minimal to support mp3 playback.</audio>
--->
+
   <h1 class="f-subheadline title color-change tc mv5">Ode to Albers</h1>
   <img class="cf ml6 w-80 pt3 mt5 absolute" src="rect-gif.gif" alt="" />
   <section class="cf" onmousemove="mouseEvent(event)" onmouseout="mouseClear()">
@@ -40,19 +49,7 @@
       <div class="bg-2 h5"></div>
     </div>
   </section>
-  <!-- trying to connect mouse events to display of mouse coordinates -->
-  <script>
-function mouseEvent(e) {
-    var x = e.offsetX;
-    var y = e.offsetY;
-    var coor = "Coordinates: (" + x + "," + y + ")";
-    document.getElementById("demo").innerHTML = coor;
-}
 
-function mouseClear() {
-    document.getElementById("demo").innerHTML = "";
-}
-</script>
 <p id="demo"></p>
   <div class="tc mb6">
     <h4 class="underline-anim f3 tracked-tight i fw2 mb0">Abstract</h4>
