@@ -27,39 +27,35 @@
     <div class="fl w-50" onmouseenter="mouseEvent1(event)" onmouseout1="mouseClear1()">
       <div class="bg-1 h5"></div>
     </div>
-    <div class="fl w-50" onmouseenter="mouseEvent2(event)" onmouseout1="mouseClear2()">
+    <div class="fl w-50" onmouseenter="mouseEvent2(event)" onmouseout2="mouseClear2()">
       <div class="bg-2 h5"></div>
     </div>
   </section>
 
 
-    <script>
-    var sound1 = new Howl({
-      src: ['minimal.mp3']
-    });
-    var sound2 = new Howl({
-      src: ['minimal2.mp3']
-    });
-
-
+<script>
+var sound1 = new Howl({
+src: ['minimal.mp3']
+});
 function mouseEvent1(e) {
     sound1.play();
-}  
-function mouseEvent2(e) {
-    sound2.play();
-
+}
+function mouseClear1(e) {
+    sound1.stop();
 }
 
-    /*
-    function mouseEvent(e) {
-        var x = e.offsetX;
-        if (x < 200) {
-          sound1.play();
-        }
-        else {
-          sound2.play();
-        }
-        */
+var sound2 = new Howl({
+  src: ['minimal2.mp3']
+});
+function mouseEvent2(e) {
+    sound2.play();
+}
+function mouseClear2(e) {
+    sound2.stop();
+}
+}
+
+
     </script>
 
 <p id="demo"></p>
