@@ -22,7 +22,7 @@
 
   <h1 class="f-subheadline title color-change tc mv5">Ode to Albers</h1>
   <img class="cf ml6 w-80 pt3 mt5 absolute" src="rect-gif.gif" alt="" />
-  <section class="cf" onmousemove="mouseEvent(event)" onmouseout="mouseClear()">
+  <section class="cf" onmouseenter="mouseEvent(event)" onmouseout="mouseClear()">
     <!-- trying to add mouse events to color section -->
     <div class="fl w-50">
       <div class="bg-1 h5"></div>
@@ -44,17 +44,13 @@
 
 
 function mouseEvent(e) {
-    var x = e.offsetX;
-    var y = e.offsetY;
-    var positionTest = (x>200);
-    var coor = "Coordinates: (" + x + "," + y + ") " + positionTest;
-    document.getElementById("demo").innerHTML = coor;
+    sound2.play();
 
 }
 
 function mouseClear() {
     document.getElementById("demo").innerHTML = "";
-    sound2.play();
+
 }
     /*
     function mouseEvent(e) {
