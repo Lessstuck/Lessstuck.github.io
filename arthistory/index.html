@@ -43,8 +43,8 @@
   <!-- trying to connect mouse events to display of mouse coordinates -->
   <script>
 function mouseEvent(e) {
-    var x = e.clientX;
-    var y = e.clientY;
+    var x = e.offsetX;
+    var y = e.offset;
     var coor = "Coordinates: (" + x + "," + y + ")";
     document.getElementById("demo").innerHTML = coor;
 }
