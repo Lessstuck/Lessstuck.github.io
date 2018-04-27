@@ -18,24 +18,6 @@
 <body class="ph3">
 
 
-  <script>
-  var sound1 = new Howl({
-    src: ['minimal.mp3']
-  });
-  sound1.play();
-  var sound2 = new Howl({
-    src: ['minimal2.mp3']
-  });
-  sound2.play();
-  function mouseEvent(e) {
-      var x = e.offsetX;
-      if (x < 200) {
-        sound1.play();
-      }
-      else {
-        sound2.play();
-      }
-  </script>
 
 
   <h1 class="f-subheadline title color-change tc mv5">Ode to Albers</h1>
@@ -49,6 +31,24 @@
       <div class="bg-2 h5"></div>
     </div>
   </section>
+
+
+    <script>
+    var sound1 = new Howl({
+      src: ['minimal.mp3']
+    });
+    var sound2 = new Howl({
+      src: ['minimal2.mp3']
+    });
+    function mouseEvent(e) {
+        var x = e.offsetX;
+        if (x < 200) {
+          sound1.play();
+        }
+        else {
+          sound2.play();
+        }
+    </script>
 
 <p id="demo"></p>
   <div class="tc mb6">
