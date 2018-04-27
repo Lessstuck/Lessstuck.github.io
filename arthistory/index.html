@@ -42,6 +42,18 @@
     });
     sound1.play();
     sound1.play();
+
+function mouseEvent(e) {
+    var x = e.offsetX;
+    var y = e.offsetY;
+    var positionTest = (x>200);
+    var coor = "Coordinates: (" + x + "," + y + ") positionTest";
+    document.getElementById("demo").innerHTML = coor;
+}
+
+function mouseClear() {
+    document.getElementById("demo").innerHTML = "";
+}
     /*
     function mouseEvent(e) {
         var x = e.offsetX;
