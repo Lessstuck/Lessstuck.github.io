@@ -31,7 +31,8 @@
 -->
   <h1 class="f-subheadline title color-change tc mv5">Ode to Albers</h1>
   <img class="cf ml6 w-80 pt3 mt5 absolute" src="rect-gif.gif" alt="" />
-  <section class="cf">
+  <section class="cf" onmousemove="mouseEvent(event)" onmouseout="mouseClear()">
+    <!-- trying to add mouse events to color section -->
     <div class="fl w-50">
       <div class="bg-1 h5"></div>
     </div>
@@ -39,6 +40,20 @@
       <div class="bg-2 h5"></div>
     </div>
   </section>
+  <!-- trying to connect mouse events to display of mouse coordinates -->
+  <script>
+function mouseEvent(e) {
+    var x = e.clientX;
+    var y = e.clientY;
+    var coor = "Coordinates: (" + x + "," + y + ")";
+    document.getElementById("demo").innerHTML = coor;
+}
+
+function mouseClear() {
+    document.getElementById("demo").innerHTML = "";
+}
+</script>
+
   <div class="tc mb6">
     <h4 class="underline-anim f3 tracked-tight i fw2 mb0">Abstract</h4>
     <p class="f4 text fw6 invis center lh-copy">
