@@ -41,7 +41,7 @@
       src: ['minimal2.mp3']
     });
     sound1.play();
-    sound1.play();
+
 
 function mouseEvent(e) {
     var x = e.offsetX;
@@ -49,6 +49,7 @@ function mouseEvent(e) {
     var positionTest = (x>200);
     var coor = "Coordinates: (" + x + "," + y + ") " + positionTest;
     document.getElementById("demo").innerHTML = coor;
+    if (positionTest) {     sound2.play();   }
 }
 
 function mouseClear() {
