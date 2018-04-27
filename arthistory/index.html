@@ -16,7 +16,27 @@
 
 
 <body class="ph3">
+<script>
+  var sound1 = new Howl({
+  src: ['minimal.mp3']
+  });
+  function mouseEvent1(e) {
+      sound1.play();
+  }
+  function mouseClear1(e) {
+      sound1.stop();
+  }
 
+  var sound2 = new Howl({
+    src: ['minimal2.mp3']
+  });
+  function mouseEvent2(e) {
+      sound2.play();
+  }
+  function mouseClear2(e) {
+      sound2.stop();
+  }
+  </script>
 
 
 
@@ -32,31 +52,6 @@
     </div>
   </section>
 
-
-<script>
-var sound1 = new Howl({
-src: ['minimal.mp3']
-});
-function mouseEvent1(e) {
-    sound1.play();
-}
-function mouseClear1(e) {
-    sound1.stop();
-}
-
-var sound2 = new Howl({
-  src: ['minimal2.mp3']
-});
-function mouseEvent2(e) {
-    sound2.play();
-}
-function mouseClear2(e) {
-    sound2.stop();
-}
-}
-
-
-    </script>
 
 <p id="demo"></p>
   <div class="tc mb6">
