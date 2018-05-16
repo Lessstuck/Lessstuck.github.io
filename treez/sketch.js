@@ -17,7 +17,7 @@ class Particle extends toxi.physics2d.VerletParticle2D {
 
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(640,360);
   physics = new toxi.physics2d.VerletPhysics2D();
   physics.addBehavior(new toxi.physics2d.behaviors.GravityBehavior(new toxi.geom.Vec2D(0, 0.001)));
 //  physics.setWorldBounds(new toxi.geom.Rect(0, 0, width, height));

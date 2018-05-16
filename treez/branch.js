@@ -4,7 +4,7 @@ function Branch(begin, end) {
   this.finished = false;
 
   this.show = function() {
-    stroke(128);
+    stroke(200);
     line(this.begin.x, this.begin.y, this.end.x, this.end.y);
   }
 
