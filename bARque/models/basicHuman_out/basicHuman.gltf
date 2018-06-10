@@ -668,26 +668,22 @@
             "uri": "buffer.bin"
         }
     ],
-    "images": [
-        {
-            "uri": "Texture.ktx"
-        }
-    ],
     "materials": [
         {
             "alphaMode": "OPAQUE",
-            "name": "Material",
+            "emissiveFactor": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "name": "StingrayPBS1",
             "pbrMetallicRoughness": {
                 "baseColorFactor": [
-                    0.800000011920929,
-                    0.800000011920929,
-                    0.800000011920929,
+                    1.0,
+                    1.0,
+                    1.0,
                     0.0
                 ],
-                "baseColorTexture": {
-                    "index": 0,
-                    "texCoord": 0
-                },
                 "metallicFactor": 0.100000001490116,
                 "roughnessFactor": 0.400000005960464
             }
@@ -1852,13 +1848,6 @@
                 48
             ],
             "skeleton": 2
-        }
-    ],
-    "textures": [
-        {
-            "name": "Texture",
-            "sampler": 0,
-            "source": 0
         }
     ]
 }
