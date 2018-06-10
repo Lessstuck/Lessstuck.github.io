@@ -5,14 +5,10 @@
 
 <body style='margin : 0px; overflow: hidden;'>
   <a-scene embedded arjs>
-    <!-- <a-assets>
-      <a-asset-item id="hito" src="./humanLopoly.gltf" ></a-asset-item>
-      <video id="testVideoTexture" autoplay loop="true" src="movies/brix6-blak-short.mp4"></video>
-    </a-assets> -->
     <a-marker-camera preset='kanji'>
     </a-marker-camera>
     <a-entity position="0 0 0" scale=".5 .5 .5"
-                gltf-model="src: url(./models/CesiumMan.glb);"
+                gltf-model="src: url(./models/AnimatedMorphSphere.gltf);"
                 animation-mixer="clip: *;">
     </a-entity>
   </a-scene>
