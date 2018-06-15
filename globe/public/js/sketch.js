@@ -70,6 +70,7 @@ var cube = new THREE.Mesh(geometry, material);
 
 // instantiate a loader
 var loader = new THREE.OBJLoader();
+var mtlLoader = new THREE.MTLLoader();
 
 // load a resource
 loader.load(
