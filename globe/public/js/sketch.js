@@ -1,28 +1,40 @@
+window.addEventListener( 'resize', onWindowResize, false );
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
 
-// let x, y, z, mx, my, mz;
-//
-// function map(num, in_min, in_max, out_min, out_max) {
-//     return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-// }
-let a = 1;
+let leftLight = .2;
+let rightLight = .2;
+let topLight = .2;
+let bottomLight = .2;
+let frontLight = .2;
 var socket = io.connect('//localhost:3000');
 
 socket.on('data', function(data) {
   let incoming = data;
   console.log(incoming);
-  if(incoming === "f"){
-    a = 2;
-  }
-
-  // x = data[1];
-  // y = data[2];
-  // z = data[3];
-  // $('#incoming').text(incoming[0] + " x:" + x + " y:" + y + " z:" + z);
-  //
-  // mx = map(parseInt(x), -10, 10, -1, 1);
-  // my = map(parseInt(y), -10, 10, -1, 1);
-  // mz = map(parseInt(z), -10, 10, -1, 1);
-  // console.log(map(x, -10, 10, .01, .09));
+  if(incoming === "left"){
+    leftLight = 2;
+    setTimeout(function(){ leftLight = 0; }, 1000);
+  };
+  if(incoming === "right"){
+    rightLight = 2;
+    setTimeout(function(){ rightLight = 0; }, 1000);
+  };
+  if(incoming === "top"){
+    topLight = 2;
+    setTimeout(function(){ topLight = 0; }, 1000);
+  };
+  if(incoming === "bottom"){
+    bottomLight = 2;
+    setTimeout(function(){ bottomLight = 0; }, 1000);
+  };
+  if(incoming === "front"){
+    frontLight = 2;
+    setTimeout(function(){ frontLight = 0; }, 1000);
+  };
 });
 socket.on('error', function() {
   console.error(arguments)
@@ -41,16 +53,25 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 console.log('renderer: ', renderer.domElement);
 document.body.appendChild(renderer.domElement);
 
+//scene.add( new THREE.AmbientLight( 0xffffff, 2 ) );
+var light1 = new THREE.PointLight( 0xffffff, 2, 0 ); light1.position.set( 3,0,0); scene.add( light1 );
+var light2 = new THREE.PointLight( 0xffffff, 2, 0 ); light2.position.set( -3,0,0 ); scene.add( light2 );
+var light3 = new THREE.PointLight( 0xffffff, 2, 0 ); light3.position.set( 0,3,0); scene.add( light3 );
+var light4 = new THREE.PointLight( 0xffffff, 2, 0 ); light4.position.set( 0,-3,0 ); scene.add( light4 );
+var light5 = new THREE.PointLight( 0xffffff, 2, 0 ); light5.position.set( 0,0,2 ); scene.add( light5 );
 
-scene.add( new THREE.AmbientLight( 0xffffff, 2 ) );
 var textureLoader = new THREE.TextureLoader();
 var earthTexture = textureLoader.load( './models/Earth_TEXTURE_CM.jpg' );
 //earthTexture.mapping = THREE.EquirectangularRefractionMapping;
 var earthBall = new THREE.OBJLoader();
+var Earth;
+var obloaded = false;
 earthBall.setPath( './models/' );
 earthBall.load( 'Earth.obj', function ( object ) {
     scene.add( object );
-    object.scale.set(.25,.25,.25);
+    object.scale.set(.5, .5,.5);
+    Earth = object;
+    obloaded = true;
 })
 
 //earthBall.scale=(.5,.5,.5);
@@ -68,8 +89,15 @@ earthMat.load( "Earth.mtl", function( materials ) {
 // Render Loop
 var render = function() {
   requestAnimationFrame(render);
-  //earthBall.rotation.x += (0.2*(Math.PI / 180));
-  //earthBall.rotation.x %=360;
+  if (obloaded) {
+    Earth.rotation.y += (0.2*(Math.PI / 180));
+    Earth.rotation.y %=360;
+    light1.intensity = leftLight;
+    light2.intensity = rightLight;
+    light3.intensity = topLight;
+    light4.intensity = bottomLight;
+    light5.intensity = frontLight;
+  }
 /*
   cube.rotation.x = 1;
   cube.rotation.y = 1;
