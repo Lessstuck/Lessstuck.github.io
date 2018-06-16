@@ -5,35 +5,44 @@ function onWindowResize() {
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-let leftLight = 2;
-let rightLight = 2;
-let topLight = 2;
-let bottomLight = 2;
-let frontLight = 2;
+var intialLight = 1.5;
+var highLight = 3;
+let leftLight = intialLight;
+let rightLight = intialLight;
+let topLight = intialLight;
+let bottomLight = intialLight;
+let frontLight = intialLight;
+var spinSpeed = 0.2;
 var socket = io.connect('//localhost:3000');
 
 socket.on('data', function(data) {
   let incoming = data;
   console.log(incoming);
   if(incoming === "left"){
-    leftLight = 2;
-    setTimeout(function(){ leftLight = 0; }, 1000);
+    leftLight = highLight;
+    setTimeout(function(){ leftLight = intialLight; }, 1000);
   };
   if(incoming === "right"){
-    rightLight = 2;
-    setTimeout(function(){ rightLight = 0; }, 1000);
+    rightLight = highLight;
+    setTimeout(function(){ rightLight = intialLight; }, 1000);
   };
   if(incoming === "top"){
-    topLight = 2;
-    setTimeout(function(){ topLight = 0; }, 1000);
+    topLight = highLight;
+    setTimeout(function(){ topLight = intialLight; }, 1000);
   };
   if(incoming === "bottom"){
-    bottomLight = 2;
-    setTimeout(function(){ bottomLight = 0; }, 1000);
+    bottomLight = highLight;
+    setTimeout(function(){ bottomLight = intialLight; }, 1000);
   };
   if(incoming === "front"){
-    frontLight = 2;
-    setTimeout(function(){ frontLight = 0; }, 1000);
+    frontLight = highLight;
+    setTimeout(function(){ frontLight = intialLight; }, 1000);
+  };
+  if(incoming === "spin"){
+    spinSpeed = 2;
+    setTimeout(function(){ spinSpeed = .2; }, 1000);
+    frontLight = highLight;
+    setTimeout(function(){ frontLight = intialLight; }, 1000);
   };
 });
 socket.on('error', function() {
@@ -54,8 +63,8 @@ console.log('renderer: ', renderer.domElement);
 document.body.appendChild(renderer.domElement);
 
 //scene.add( new THREE.AmbientLight( 0xffffff, 2 ) );
-var light1 = new THREE.PointLight( 0xffffff, 2, 0 ); light1.position.set( 3,0,0); scene.add( light1 );
-var light2 = new THREE.PointLight( 0xffffff, 2, 0 ); light2.position.set( -3,0,0 ); scene.add( light2 );
+var light1 = new THREE.PointLight( 0xffffff, 2, 0 ); light1.position.set( -3,0,0); scene.add( light1 );
+var light2 = new THREE.PointLight( 0xffffff, 2, 0 ); light2.position.set( 3,0,0 ); scene.add( light2 );
 var light3 = new THREE.PointLight( 0xffffff, 2, 0 ); light3.position.set( 0,3,0); scene.add( light3 );
 var light4 = new THREE.PointLight( 0xffffff, 2, 0 ); light4.position.set( 0,-3,0 ); scene.add( light4 );
 var light5 = new THREE.PointLight( 0xffffff, 2, 0 ); light5.position.set( 0,0,2 ); scene.add( light5 );
@@ -90,7 +99,7 @@ earthMat.load( "Earth.mtl", function( materials ) {
 var render = function() {
   requestAnimationFrame(render);
   if (obloaded) {
-    Earth.rotation.y += (0.2*(Math.PI / 180));
+    Earth.rotation.y += (spinSpeed*(Math.PI / 180));
     Earth.rotation.y %=360;
     light1.intensity = leftLight;
     light2.intensity = rightLight;

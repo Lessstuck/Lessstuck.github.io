@@ -7,7 +7,7 @@ var mqtt = require("mqtt");
 var client = mqtt.connect("mqtt://127.0.0.1");
 
 client.on("connect", function() {
-    client.subscribe("earth");
+    client.subscribe("hello");
 });
 
 //expose the local public folder for inluding files js, css etc..
