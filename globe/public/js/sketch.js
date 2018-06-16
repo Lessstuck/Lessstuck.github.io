@@ -5,11 +5,11 @@ function onWindowResize() {
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-let leftLight = .2;
-let rightLight = .2;
-let topLight = .2;
-let bottomLight = .2;
-let frontLight = .2;
+let leftLight = 2;
+let rightLight = 2;
+let topLight = 2;
+let bottomLight = 2;
+let frontLight = 2;
 var socket = io.connect('//localhost:3000');
 
 socket.on('data', function(data) {
@@ -69,7 +69,7 @@ var obloaded = false;
 earthBall.setPath( './models/' );
 earthBall.load( 'Earth.obj', function ( object ) {
     scene.add( object );
-    object.scale.set(.5, .5,.5);
+    object.scale.set(.45, .45,.45);
     Earth = object;
     obloaded = true;
 })
