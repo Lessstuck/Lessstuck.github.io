@@ -11,5 +11,14 @@
                 gltf-model="src: url(./models/dinghy.glb);"
                 <!-- animation-mixer="clip: *;"> -->
     </a-entity>
+    <!-- Red directional light shining from the top left. -->
+    <a-light color="red" position="-1 1 0"></a-light>
+
+    <!-- Blue point light, 5 meters in the air. -->
+    <a-light type="point" color="blue" position="0 5 0"></a-light>
+
+    <!-- Dim ambient lighting. -->
+    <a-light type="ambient" color="#222"></a-light>
+
   </a-scene>
 </body>
