@@ -9,9 +9,14 @@
     <a-marker-camera preset='kanji'>
     </a-marker-camera>
     <a-entity id="boat">
-          <a-entity position="0 3.8 0" scale=".25 .25 .25" rotation="0 90 0"
-                gltf-model="src: url(./models/dinghy.glb);"
-                <!-- animation-mixer="clip: *;"> -->
+          <a-entity position="0 3.8 0"
+                    scale=".25 .25 .25"
+                    rotation="0 90 0"
+                    obj-model=”obj: url(./models/Dinghy_Wooden_Boat_obj/Dinghy_Wooden_Boat_0.obj);"
+          >
+                    <!-- mtl: url(./models/Dinghy_Wooden_Boat_obj/.mtl) -->
+                    <!-- gltf-model="src: url(./models/dinghy.glb);" -->
+                    <!-- animation-mixer="clip: *;"> -->
           </a-entity>
     </a-entity>
     <a-light type="point" color="yellow" position="-1 1 0"></a-light>
