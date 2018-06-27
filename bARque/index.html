@@ -29,7 +29,7 @@
 
   <script type="text/javascript">
     var tip = 0.;
-    var socket = io.connect('//10.0.1.15:3000');
+    var socket = io.connect('//de7ff8db.ngrok.io');
     socket.on('mysocket', function(data) {
       console.log(data[0]);
       tip = data[0];
