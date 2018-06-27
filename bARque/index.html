@@ -27,25 +27,27 @@
   <!-- gltf-model="src: url(./models/Dinghy_Wooden_Boat.mtl);" -->
   <!-- animation-mixer="clip: *;"> -->
 
-  <script type="text/javascript">
-    var tip = 0.;
-    var socket = io.connect('//de7ff8db.ngrok.io');
-    socket.on('mysocket', function(data) {
-      console.log(data[0]);
-      tip = data[0];
-      // if(data[0] ==="/tip" && data[1] !== null){
-      //   console.log(data);
-      //x = map(data[1], 0, 1, -400, 400);
-    });
-    socket.on('error', function() {
-      console.error(arguments)
-    });
     function onSceneLoaded() {
           const boat = document.querySelector('#boat');
-          boat.setAttribute('position', tip);
         }
     const scene = document.querySelector('a-scene');
     scene.addEventListener('loaded', onSceneLoaded);
+
+    <script type="text/javascript">
+      var tip = 0.;
+      var socket = io.connect('//de7ff8db.ngrok.io');
+      socket.on('data', function(data) {
+        console.log(data[0]);
+        tip = data[0];
+        boat.rotation.z = tip * 20;
+        // if(data[0] ==="/tip" && data[1] !== null){
+        //   console.log(data);
+        //x = map(data[1], 0, 1, -400, 400);
+      });
+      socket.on('error', function() {
+        console.error(arguments)
+      });
+
   </script>
 
 
