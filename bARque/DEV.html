@@ -7,13 +7,32 @@
   <a-scene embedded arjs="debugUIEnabled: false;">
     <a-marker-camera preset='kanji'>
     </a-marker-camera>
-    <a-entity position="0 3.8 0" scale=".25 .25 .25" rotation="0 90 0"
+    <a-entity id="boat">
+          <a-entity position="0 3.8 0" scale=".25 .25 .25" rotation="0 90 0"
                 gltf-model="src: url(./models/dinghy.glb);"
                 <!-- animation-mixer="clip: *;"> -->
+          </a-entity>
     </a-entity>
     <a-light type="point" color="yellow" position="-1 1 0"></a-light>
     <a-light type="point" color="#00FF00" position="2 1 0"></a-light>
-    <a-light type="point" color="#white" position="0 2 0"></a-light>
+    <a-light type="point" color="#skyblue" position="0 2 0"></a-light>
 
   </a-scene>
+
+  <script type="text/javascript">
+        function onSceneLoaded() {
+
+          const boat = document.querySelector('#boat');
+
+
+          boat.setAttribute('position', tip);
+
+
+
+      }
+        const scene = document.querySelector('a-scene');
+        scene.addEventListener('loaded', onSceneLoaded);
+      </script>
+
+
 </body>
