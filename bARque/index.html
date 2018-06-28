@@ -41,7 +41,7 @@
       socket.on('data', function(data) {
         console.log(data[0]);
         tip = data[0];
-        boat.rotation.z = (tip * 0.1) + .75;
+        boat.rotation.z = (tip * 0.1) + .25;
         console.log(boat.rotation.z);
         // if(data[0] ==="/tip" && data[1] !== null){
         //   console.log(data);
