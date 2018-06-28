@@ -29,7 +29,8 @@
   <script type="text/javascript">
     let boat;
     function onSceneLoaded() {
-          boat = document.querySelector('#boat');
+          boat = document.querySelector('#boat').object3D;
+
         }
     const scene = document.querySelector('a-scene');
     scene.addEventListener('loaded', onSceneLoaded);
