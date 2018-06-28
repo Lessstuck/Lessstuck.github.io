@@ -9,7 +9,7 @@
     <a-marker-camera preset='kanji'>
     </a-marker-camera>
     <a-entity id="boat">
-          <a-entity position="0 2.8 0"
+          <a-entity position="0 2.7 0"
                     scale=".002 .002 .002"
                     rotation="0 90 0"
                     obj-model="obj: url(./models/Dinghy_Wooden_Boat_obj/Dinghy_Wooden_Boat.obj);
@@ -37,7 +37,7 @@
 
       var tip = 0.;
     //  var socket = io.connect('//53703f13.ngrok.io');
-    var socket = io.connect('//6879531e.ngrok.io');
+    var socket = io.connect('//ae7cf58d.ngrok.io');
       socket.on('data', function(data) {
         console.log(data[0]);
         tip = data[0];
