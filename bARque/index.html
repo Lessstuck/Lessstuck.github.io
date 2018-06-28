@@ -27,15 +27,15 @@
   <!-- gltf-model="src: url(./models/Dinghy_Wooden_Boat.mtl);" -->
   <!-- animation-mixer="clip: *;"> -->
   <script type="text/javascript">
-
+    let boat;
     function onSceneLoaded() {
-          const boat = document.querySelector('#boat');
+          boat = document.querySelector('#boat');
         }
     const scene = document.querySelector('a-scene');
     scene.addEventListener('loaded', onSceneLoaded);
 
       var tip = 0.;
-      var socket = io.connect('//aba0d563.ngrok.io');
+      var socket = io.connect('//53703f13.ngrok.io');
       socket.on('data', function(data) {
         console.log(data[0]);
         tip = data[0];
