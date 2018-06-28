@@ -35,7 +35,7 @@
     scene.addEventListener('loaded', onSceneLoaded);
 
       var tip = 0.;
-      var socket = io.connect('//de7ff8db.ngrok.io');
+      var socket = io.connect('//aba0d563.ngrok.io');
       socket.on('data', function(data) {
         console.log(data[0]);
         tip = data[0];
