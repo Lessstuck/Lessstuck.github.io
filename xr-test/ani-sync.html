@@ -26,7 +26,7 @@
     </script>
 </head>
   <body class="a-body">
-    <a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
+    <a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" arjs="debugUIEnabled: false;">
       <a-entity laser-controls="hand: left " daydream-controls="" gearvr-controls="" oculus-go-controls="" oculus-touch-controls="" vive-controls="" windows-motion-controls=""></a-entity>
       <a-entity laser-controls="hand: right " daydream-controls="" gearvr-controls="" oculus-go-controls="" oculus-touch-controls="" vive-controls="" windows-motion-controls=""></a-entity>
       <a-entity id="boat">
@@ -45,7 +45,7 @@
       </a-camera>
       <!-- everything from mh example except source type -->
       <a-assets>
-
+        <a-asset-item id="boatfile" src="models/boat.glb"> </a-asset-item>
       </a-assets>
     </a-scene>
 
