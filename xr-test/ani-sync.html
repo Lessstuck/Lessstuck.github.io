@@ -10,7 +10,8 @@
     <script src="js/arrow-key-rotation.js"></script>
     <script src="js/play-on-window-click.js"></script>
     <script src="js/play-on-vrdisplayactivate-or-enter-vr.js"></script>
-    <script src="js/hide-once-playing.js"></script>
+    <!-- <script src="js/hide-once-playing.js"></script> -->
+    
 </head>
   <body class="a-body">
     <a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
@@ -23,20 +24,11 @@
       </a-videosphere>
         <!-- Define camera with zero user height, movement disabled and arrow key rotation added. -->
       <a-camera user-height="0" wasd-controls-enabled="false" arrow-key-rotation>
-        <!-- Text element for display messaging.  Hide once video is playing. -->
-        <a-entity id="msg" position="0 -0.3 -1.5" text="align:center;
-                  width:3;
-                  wrapCount:100;
-                  color:red;
-                  value:Click window to make the video play, if needed."
-                  hide-once-playing="#video">
-        </a-entity>
+
       </a-camera>
       <!-- everything from mh example except source type -->
       <a-assets>
-          <video id="video" style="display:none" autoplay loop crossorigin="anonymous" playsinline webkit-playsinline>
-            <source src="assets/video/tDay.mov" />
-          </video>
+
       </a-assets>
     </a-scene>
   </body>
