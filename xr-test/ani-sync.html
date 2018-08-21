@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0051)https://mhellar.github.io/xrclass/day2/code/10.html -->
 <html class="a-html"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Basic Interactions - A-Frame</title>
+    <title>Animated Models Sync Other Things</title>
     <meta name="description" content="Interactions - A-Frame">
     <meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui"><meta aframe-injected="" name="mobile-web-app-capable" content="yes"><meta aframe-injected="" name="theme-color" content="black">
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
@@ -32,7 +32,7 @@
       <a-entity id="boat">
             <a-entity gltf-model="#boatfile"
                       position="0 0 0"
-                      scale=".002 .002 .002"
+                      scale=".02 .02 .02"
                       rotation="0 0 0"
                       animation-mixer="loop: pingpong">
             </a-entity>
@@ -42,8 +42,8 @@
       <a-light type="point" color="skyblue" position="2 1 0" intensity="4"></a-light>
       <a-light type="point" color="skyblue" position="0 4 0" intensity="2"></a-light>
         <!-- Define camera with zero user height, movement disabled and arrow key rotation added. -->
-      <a-camera user-height="0" wasd-controls-enabled="false" arrow-key-rotation>
-      </a-camera>
+      <!-- <a-camera user-height="0" wasd-controls-enabled="false" arrow-key-rotation>
+      </a-camera> -->
       <!-- everything from mh example except source type -->
       <a-assets>
         <a-asset-item id="boatfile" src="models/boat.glb"> </a-asset-item>
