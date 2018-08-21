@@ -37,6 +37,7 @@
                       animation-mixer="loop: pingpong">
             </a-entity>
       </a-entity>
+      <a-sky color="#6EBAA7"></a-sky>
       <a-light type="point" color="yellow" position="-4 4 0" intensity="2"></a-light>
       <a-light type="point" color="skyblue" position="2 1 0" intensity="4"></a-light>
       <a-light type="point" color="skyblue" position="0 4 0" intensity="2"></a-light>
@@ -52,7 +53,7 @@
     <!-- Just paste in a bunch of code and see if it works -->
     <script type="text/javascript">
       //var socket = io();
-      //const scene = document.querySelector('a-scene');
+      const scene = document.querySelector('a-scene');
       let boat;
       boat = document.querySelector('#boat');
       //      var socket = io('http://10.0.1.15');
@@ -61,6 +62,5 @@
         console.log("event");
       });
     </script>
-
   </body>
 </html>
