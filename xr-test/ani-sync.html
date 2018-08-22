@@ -41,9 +41,9 @@
       const scene = document.querySelector('a-scene');
       let boat;
       boat = document.querySelector('#boat');
-      var socket = io();
+    //var socket = io();
       boat.addEventListener('animation-loop', function () {
-        socket.emit("newLoop", 1);
+        //socket.emit("newLoop", 1);
         console.log("event");
       });
     </script>
