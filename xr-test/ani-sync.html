@@ -43,7 +43,7 @@
       boat = document.querySelector('#boat');
       var socket = io();
       boat.addEventListener('animation-loop', function () {
-        //socket.emit("newLoop", 1);
+        socket.emit("newLoop");
         console.log("event");
       });
     </script>
