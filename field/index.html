@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!-- saved from url=(0051)https://mhellar.github.io/xrclass/day2/code/10.html -->
-<html class="a-html"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Basic Interactions - A-Frame</title>
+<html class="a-html">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Animated Models Sync Emitter</title>
     <meta name="description" content="Interactions - A-Frame">
     <meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui"><meta aframe-injected="" name="mobile-web-app-capable" content="yes"><meta aframe-injected="" name="theme-color" content="black">
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
@@ -10,53 +11,42 @@
     <script src="js/arrow-key-rotation.js"></script>
     <script src="js/play-on-window-click.js"></script>
     <script src="js/play-on-vrdisplayactivate-or-enter-vr.js"></script>
-    <script src="js/hide-once-playing.js"></script>
+    <!-- <script src="js/hide-once-playing.js"></script> -->
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="js/aframe-extras.loaders.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
 </head>
-
 <body class="a-body">
-    <a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
+    <a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" arjs="debugUIEnabled: false;">
+      <a-entity laser-controls="hand: left " daydream-controls="" gearvr-controls="" oculus-go-controls="" oculus-touch-controls="" vive-controls="" windows-motion-controls=""></a-entity>
+      <a-entity laser-controls="hand: right " daydream-controls="" gearvr-controls="" oculus-go-controls="" oculus-touch-controls="" vive-controls="" windows-motion-controls=""></a-entity>
+      <a-marker-camera preset='kanji'></a-marker-camera>
+      <a-entity id="boat">
+            <a-entity gltf-model="#boatfile"
+                      position="0 1 0"
+                      scale=".02 .02 .02"
+                      rotation="0 0 0"
+                      animation-mixer="loop: pingpong"
+                      sound="src: assets/sound/not3.m4a; on: animation-loop">
+            </a-entity>
+      </a-entity>
+      <a-light type="point" color="white" position="-4 4 0" intensity="0.5"></a-light>
+      <a-light type="point" color="white" position="2 1 0" intensity="1"></a-light>
+      <a-light type="point" color="white" position="0 4 0" intensity="0.5"></a-light>
+      <a-assets>
+        <a-asset-item id="boatfile" src="assets/models/boat.glb"> </a-asset-item>
+      </a-assets>
+    </a-scene>
 
-
-        <a-entity laser-controls="hand: left " daydream-controls="" gearvr-controls="" oculus-go-controls="" oculus-touch-controls="" vive-controls="" windows-motion-controls=""></a-entity>
-        <a-entity laser-controls="hand: right " daydream-controls="" gearvr-controls="" oculus-go-controls="" oculus-touch-controls="" vive-controls="" windows-motion-controls=""></a-entity>
-
-
-        <!-- The original example also has this 180 degree rotation, to appear to be going forward. -->
-        <a-videosphere rotation="0 180 0" src="#video"
-                       play-on-window-click
-                       play-on-vrdisplayactivate-or-enter-vr>
-        </a-videosphere>
-        <!-- Define camera with zero user height, movement disabled and arrow key rotation added. -->
-        <a-camera user-height="0" wasd-controls-enabled="false" arrow-key-rotation>
-          <!-- Text element for display messaging.  Hide once video is playing. -->
-          <a-entity id="msg" position="0 -0.3 -1.5" text="align:center;
-                  width:3;
-                  wrapCount:100;
-                  color:red;
-                  value:Click window to make the video play, if needed."
-                  hide-once-playing="#video">
-          </a-entity>
-        </a-camera>
-
-        <!-- Wait for the video to load. -->
-
-
-<!-- everything except source type -->
-
-<a-assets>
-    <video id="video" style="display:none"
-        autoplay loop crossorigin="anonymous" playsinline webkit-playsinline>
-          <source src="assets/video/tDay.mov" />
-    </video>
-</a-assets>
-
-    <!-- <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="2550" height="1518"></canvas>
-    <div class="a-enter-vr" aframe-injected=""><button class="a-enter-vr-button" title="Enter VR mode with a headset or fullscreen mode on a desktop. Visit https://webvr.rocks or https://webvr.info for more information." aframe-injected=""></button></div>
-    <div class="a-orientation-modal a-hidden" aframe-injected="">
-    <button aframe-injected="">Exit VR</button></div>
-    <a-entity light="" data-aframe-default-light="" aframe-injected=""></a-entity>
-    <a-entity light="" position="" data-aframe-default-light="" aframe-injected=""></a-entity> -->
-  </a-scene>
-
-
-</body></html>
+<script type="text/javascript">
+      const scene = document.querySelector('a-scene');
+      let boat;
+      boat = document.querySelector('#boat');
+      var socket = io();
+      boat.addEventListener('animation-loop', function () {
+        socket.emit("newLoop");
+        console.log("event");
+      });
+    </script>
+</body>
+</html>
