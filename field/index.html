@@ -20,22 +20,10 @@
     <a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" arjs="debugUIEnabled: false;">
       <a-entity laser-controls="hand: left " daydream-controls="" gearvr-controls="" oculus-go-controls="" oculus-touch-controls="" vive-controls="" windows-motion-controls=""></a-entity>
       <a-entity laser-controls="hand: right " daydream-controls="" gearvr-controls="" oculus-go-controls="" oculus-touch-controls="" vive-controls="" windows-motion-controls=""></a-entity>
-      <a-marker-camera preset='kanji'></a-marker-camera>
-      <a-entity id="boat">
-            <a-entity gltf-model="#boatfile"
-                      position="0 1 0"
-                      scale=".02 .02 .02"
-                      rotation="0 0 0"
-                      animation-mixer="loop: pingpong"
-                      sound="src: assets/sound/not3.m4a; on: animation-loop">
-            </a-entity>
+      <a-camera ></a-camera>
+      <a-entity
+          <a-sphere osition="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
       </a-entity>
-      <a-light type="point" color="white" position="-4 4 0" intensity="0.5"></a-light>
-      <a-light type="point" color="white" position="2 1 0" intensity="1"></a-light>
-      <a-light type="point" color="white" position="0 4 0" intensity="0.5"></a-light>
-      <a-assets>
-        <a-asset-item id="boatfile" src="assets/models/boat.glb"> </a-asset-item>
-      </a-assets>
     </a-scene>
 
 <script type="text/javascript">

@@ -19,36 +19,12 @@
 
         <a-entity laser-controls="hand: left " daydream-controls="" gearvr-controls="" oculus-go-controls="" oculus-touch-controls="" vive-controls="" windows-motion-controls=""></a-entity>
         <a-entity laser-controls="hand: right " daydream-controls="" gearvr-controls="" oculus-go-controls="" oculus-touch-controls="" vive-controls="" windows-motion-controls=""></a-entity>
-
-
-        <!-- The original example also has this 180 degree rotation, to appear to be going forward. -->
-        <a-videosphere rotation="0 180 0" src="#video"
-                       play-on-window-click
-                       play-on-vrdisplayactivate-or-enter-vr>
-        </a-videosphere>
-        <!-- Define camera with zero user height, movement disabled and arrow key rotation added. -->
         <a-camera user-height="0" wasd-controls-enabled="false" arrow-key-rotation>
-          <!-- Text element for display messaging.  Hide once video is playing. -->
-          <a-entity id="msg" position="0 -0.3 -1.5" text="align:center;
-                  width:3;
-                  wrapCount:100;
-                  color:red;
-                  value:Click window to make the video play, if needed."
-                  hide-once-playing="#video">
+          <a-entity
+
           </a-entity>
         </a-camera>
 
-        <!-- Wait for the video to load. -->
-
-
-<!-- everything except source type -->
-
-<a-assets>
-    <video id="video" style="display:none"
-        autoplay loop crossorigin="anonymous" playsinline webkit-playsinline>
-          <source src="assets/video/tDay.mov" />
-    </video>
-</a-assets>
 
     <!-- <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="2550" height="1518"></canvas>
     <div class="a-enter-vr" aframe-injected=""><button class="a-enter-vr-button" title="Enter VR mode with a headset or fullscreen mode on a desktop. Visit https://webvr.rocks or https://webvr.info for more information." aframe-injected=""></button></div>
