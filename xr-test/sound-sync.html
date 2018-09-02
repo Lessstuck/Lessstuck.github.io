@@ -26,70 +26,52 @@
       <a-entity laser-controls="hand: right " daydream-controls="" gearvr-controls="" oculus-go-controls="" oculus-touch-controls="" vive-controls="" windows-motion-controls=""></a-entity>
       <a-entity
             geometry="primitive: sphere"
-            material="color: blue"
-            position="-2 1 0"
+            material="color: red"
+            position="-2 1 -2"
             scale=".1 .1 .1"
             sound="src: assets/sound/spaceMix-boc.mp3; autoplay: true; loop: true; volume: 2">
       </a-entity>
       <a-entity
             geometry="primitive: sphere"
-            material="color: blue"
-            position="2 1 0"
+            material="color: green"
+            position="2 1 -2"
             scale=".1 .1 .1"
             sound="src: assets/sound/spaceMix-chirp.mp3; autoplay: true; loop: true; volume: 2">
       </a-entity>
       <a-entity
             geometry="primitive: sphere"
             material="color: blue"
-            position="0 1 -2"
+            position="2 1 2"
             scale=".1 .1 .1"
             sound="src: assets/sound/spaceMix-lubdub.mp3; autoplay: true; loop: true; volume: 2">
       </a-entity>
       <a-entity
             geometry="primitive: sphere"
-            material="color: blue"
-            position="0 1 2"
+            material="color: yellow"
+            position="-2 1 2"
             scale=".1 .1 .1"
             sound="src: assets/sound/spaceMix-upbeat.mp3; autoplay: true; loop: true; volume: 2">
       </a-entity>
       <a-light type="point" color="white" position="-4 4 0" intensity="0.5"></a-light>
       <a-light type="point" color="white" position="2 1 0" intensity="1"></a-light>
       <a-light type="point" color="white" position="0 4 0" intensity="0.5"></a-light>
-      <a-sky color="#FFF ></a-sky>
+      <a-sky color="#444444"></a-sky>
       <!-- Define the Curve -->
-              <a-curve id="track1">
-                  <a-curve-point position="-16 19 -33"></a-curve-point>
-                  <a-curve-point position="7 24 -57"></a-curve-point>
-                  <a-curve-point position="53 7 5"></a-curve-point>
-                  <a-curve-point position="22 9 17"></a-curve-point>
-                  <a-curve-point position="29 6 42"></a-curve-point>
-                  <a-curve-point position="27 33.45 60"></a-curve-point>
-                  <a-curve-point position="-33 6.0 27"></a-curve-point>
-                  <a-curve-point position="-16 19 -33"></a-curve-point>
-              </a-curve>
-              <!-- Draw the Curve -->
-              <a-draw-curve curveref="#track1" material="shader: line; color: blue;"></a-draw-curve>
-
-              <!-- Clone a Box along the Curve -->
-              <!-- <a-entity clone-along-curve="curve: #track1; spacing: 0.2; scale: 1 1 1; rotation: 0 0 0;" geometry="primitive:box; height:0.1; width:0.2; depth:0.1"></a-entity> -->
-
-              <!-- Set the camera to follow the curve -->
-              <a-camera alongpath="curve: #track1; loop: true; dur: 12000"></a-camera>
-        <a-curve id="track1">
-            <a-curve-point position="-2 1 0"></a-curve-point>
-            <a-curve-point position="2 1 0"></a-curve-point>
-            <a-curve-point position="0 1 -2"></a-curve-point>
-            <a-curve-point position="0 1 2"></a-curve-point>
-            <a-curve-point position="-2 1 0"></a-curve-point>
-        </a-curve>
+      <a-curve id="track1">
+                  <a-curve-point position="-1 1 -1"></a-curve-point>
+                  <a-curve-point position="1 1 -1"></a-curve-point>
+                  <a-curve-point position="1 1 1"></a-curve-point>
+                  <a-curve-point position="-1 1 1"></a-curve-point>
+                  <a-curve-point position="-1 1 -1"></a-curve-point>
+      </a-curve>
         <!-- Draw the Curve -->
-        <a-draw-curve curveref="#track1" material="shader: line; color: blue;"></a-draw-curve>
+      <a-draw-curve curveref="#track1" material="shader: line; color: blue;"></a-draw-curve>
 
         <!-- Clone a Box along the Curve -->
-        <!-- <a-entity clone-along-curve="curve: #track1; spacing: 0.2; scale: 1 1 1; rotation: 0 0 0;" geometry="primitive:box; height:0.1; width:0.2; depth:0.1"></a-entity> -->
+      <a-entity clone-along-curve="curve: #track1; spacing: 0.2; scale: .1 .1 .1; rotation: 0 0 0;" geometry="primitive:box; height:0.1; width:0.2; depth:0.1"></a-entity>
 
         <!-- Set the camera to follow the curve -->
-        <a-camera alongpath="curve: #track1; loop: true; dur: 120000"></a-camera>
+      <a-camera alongpath="curve: #track1; loop: true; dur: 18000"></a-camera>
     </a-scene>
 </body>
 </html>
