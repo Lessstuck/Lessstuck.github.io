@@ -27,28 +27,28 @@
       <a-entity
             geometry="primitive: sphere"
             material="color: red"
-            position="-2 1 -2"
+            position="-1 1 -1"
             scale=".1 .1 .1"
             sound="src: assets/sound/spaceMix-boc.mp3; autoplay: true; loop: true; volume: 2">
       </a-entity>
       <a-entity
             geometry="primitive: sphere"
             material="color: green"
-            position="2 1 -2"
+            position="1 1 -1"
             scale=".1 .1 .1"
             sound="src: assets/sound/spaceMix-chirp.mp3; autoplay: true; loop: true; volume: 2">
       </a-entity>
       <a-entity
             geometry="primitive: sphere"
             material="color: blue"
-            position="2 1 2"
+            position="1 1 1"
             scale=".1 .1 .1"
             sound="src: assets/sound/spaceMix-lubdub.mp3; autoplay: true; loop: true; volume: 2">
       </a-entity>
       <a-entity
             geometry="primitive: sphere"
             material="color: yellow"
-            position="-2 1 2"
+            position="-1 1 1"
             scale=".1 .1 .1"
             sound="src: assets/sound/spaceMix-upbeat.mp3; autoplay: true; loop: true; volume: 2">
       </a-entity>
@@ -68,7 +68,7 @@
       <a-draw-curve curveref="#track1" material="shader: line; color: blue;"></a-draw-curve>
 
         <!-- Clone a Box along the Curve -->
-      <a-entity clone-along-curve="curve: #track1; spacing: 0.2; scale: .1 .1 .1; rotation: 0 0 0;" geometry="primitive:box; height:0.1; width:0.2; depth:0.1"></a-entity>
+      <a-entity clone-along-curve="curve: #track1; spacing: 0.2; scale: .03 .03 .03; rotation: 0 0 0;" geometry="primitive:box; height:0.3; width:0.2; depth:0.1"></a-entity>
 
         <!-- Set the camera to follow the curve -->
       <a-camera alongpath="curve: #track1; loop: true; dur: 18000"></a-camera>
