@@ -27,28 +27,6 @@
        light="defaultLightsEnabled: true;"
        stats="false"
   >
-    <!-- <a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" arjs="debugUIEnabled: false;"> -->
-      <!-- <a-entity id="enviro" position="0 -.001 0" environment="
-        preset: tron;
-        groundYScale: 100;
-        fog: 0.6;
-        dressingAmount: 20;
-        groundColor2: #008eb7;
-        groundColor: #b34093;
-        groundTexture: checkerboard;
-        ground: spikes;
-        active: true; seed: 17;
-        skyType: gradient;
-        skyColor: #87faf4;
-        horizonColor: #b50200;
-        flatShading: true;
-        dressing: arches;
-        dressingColor: #4f30f7;
-        dressingScale: 0.2;
-        dressingAmount: 10;
-        dressingOnPlayArea: 1;
-        gridColor: #239893">
-      </a-entity> -->
       <a-entity
             geometry="primitive: sphere"
             material="color: red"
@@ -56,21 +34,13 @@
             scale="1 1 1"
             sound="src: assets/sound/spaceMix-boc.mp3; autoplay: true; loop: true; volume: 1">
       </a-entity>
-      <!-- <a-sky
-            geometry="primitive: sphere"
-            material="src: assets/img/Earth_TEXTURE_CM.jpg"
-            position="2 1 -2"
-            scale="1 1 -1"
-            sound="src: assets/sound/spaceMix-chirp.mp3; autoplay: true; loop: true; volume: 1">
-      </a-sky> -->
-    <!-- </a-entity> -->
-            <a-entity
+      <a-entity
           geometry="primitive:sphere;radius:1;segmentsWidth:16;segmentsHeight:16"
           material="shader:flat;color:#ffffff;fog:false; src:assets/img/Earth_TEXTURE_CM.jpg"
           position="2 1 0"
           scale="-1 1 1"
           rotation="0 -90 0"
-</a-entity>
+      </a-entity>
       <a-entity
             geometry="primitive: sphere"
             material="color: blue"
@@ -88,8 +58,6 @@
       <a-light type="point" color="white" position="-4 4 0" intensity="0.5"></a-light>
       <a-light type="point" color="white" position="2 1 0" intensity="1"></a-light>
       <a-light type="point" color="white" position="0 4 0" intensity="0.5"></a-light>
-      <!-- <a-sky color="#440099"></a-sky> -->
-      <!-- Define the Curve -->
       <a-curve id="track1">
                   <a-curve-point position="-2 1 0"></a-curve-point>
                   <a-curve-point position="2 1 0"></a-curve-point>
@@ -97,13 +65,9 @@
                   <a-curve-point position="-2 -1 0"></a-curve-point>
                   <a-curve-point position="-2 1 0"></a-curve-point>
       </a-curve>
-        <!-- Draw the Curve -->
       <a-draw-curve curveref="#track1" material="shader: line; color: blue;"></a-draw-curve>
-
-        <!-- Clone a Box along the Curve -->
       <a-entity clone-along-curve="curve: #track1; spacing: 0.2; scale: .03 .03 .03; rotation: 0 0 0;" geometry="primitive:box; height:0.3; width:0.2; depth:0.1"></a-entity>
 
-        <!-- Set the camera to follow the curve -->
     <a-entity position="0 -1.5 0">
       <a-entity  alongpath="curve: #track1; loop: true; dur: 24000">
         <a-camera >
