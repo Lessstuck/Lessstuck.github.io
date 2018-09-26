@@ -65,7 +65,7 @@
       </a-sky> -->
     <!-- </a-entity> -->
             <a-entity
-          geometry="primitive:sphere;radius:2;segmentsWidth:8;segmentsHeight:8"
+          geometry="primitive:sphere;radius:1;segmentsWidth:16;segmentsHeight:16"
           material="shader:flat;color:#ffffff;fog:false; src:assets/img/Earth_TEXTURE_CM.jpg"
           position="2 1 -2"
           scale="-1 1 1"
@@ -74,14 +74,14 @@
       <a-entity
             geometry="primitive: sphere"
             material="color: blue"
-            position="-2 1 2"
+            position="-2 -1 -2"
             scale="1 1 1"
             sound="src: assets/sound/spaceMix-lubdub.mp3; autoplay: true; loop: true; volume: 1">
       </a-entity>
       <a-entity
             geometry="primitive: sphere"
             material="color: yellow"
-            position="2 1 2"
+            position="2 -1 -2"
             scale="1 1  1"
             sound="src: assets/sound/spaceMix-upbeat.mp3; autoplay: true; loop: true; volume: 1">
       </a-entity>
@@ -93,8 +93,8 @@
       <a-curve id="track1">
                   <a-curve-point position="-2 1 -2"></a-curve-point>
                   <a-curve-point position="2 1 -2"></a-curve-point>
-                  <a-curve-point position="-2 1 2"></a-curve-point>
-                  <a-curve-point position="2 1 2"></a-curve-point>
+                  <a-curve-point position="-2 -1 2"></a-curve-point>
+                  <a-curve-point position="2 -1 2"></a-curve-point>
                   <a-curve-point position="-2 1 -2"></a-curve-point>
       </a-curve>
         <!-- Draw the Curve -->
