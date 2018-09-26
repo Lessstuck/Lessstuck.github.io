@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>WebVR tyout</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.3.1/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene stats>
+      <a-assets>
+            <img src="https://c3.staticflickr.com/2/1475/26239222850_cabde81c39_k.jpg" id="img-photosphere-1">
+      </a-assets>
+      <!-- <a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"></a-box>
+      <a-cylinder position="1 0.75 1" radius="0.5" height="1" color="#FFC65D"></a-cylinder> -->
+      <a-plane rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+
+      <!-- <a-sky color="#ECECEC"></a-sky> -->
+      <a-entity position="0 0 3.8">
+        <a-camera></a-camera>
+      </a-entity>
+              <a-entity
+            geometry="primitive:sphere;radius:2;segmentsWidth:8;segmentsHeight:8"
+            material="shader:flat;color:#ffffff;fog:false; src:#img-photosphere-1"
+            scale="-1 1 1"
+            rotation="0 -90 0" id="photosphere">
+</a-entity>
+    </a-scene>
+</body>
+</html>

@@ -22,7 +22,11 @@
 </head>
 <body>
 <!-- <body class="a-body"> -->
-  <a-scene>
+  <a-scene background="color: lightblue;"
+       renderer="antialias: true; gammaOutput: false;"
+       light="defaultLightsEnabled: true;"
+       stats="false"
+  >
     <!-- <a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" arjs="debugUIEnabled: false;"> -->
       <!-- <a-entity id="enviro" position="0 -.001 0" environment="
         preset: tron;
@@ -49,40 +53,48 @@
             geometry="primitive: sphere; radius: 1000"
             material="color: red"
             position="-2 1 -2"
-            scale="1 1 -1"
+            scale="1 1 1"
             sound="src: assets/sound/spaceMix-boc.mp3; autoplay: true; loop: true; volume: 1">
       </a-entity>
-      <a-entity
+      <!-- <a-sky
             geometry="primitive: sphere"
             material="src: assets/img/Earth_TEXTURE_CM.jpg"
             position="2 1 -2"
             scale="1 1 -1"
             sound="src: assets/sound/spaceMix-chirp.mp3; autoplay: true; loop: true; volume: 1">
-      </a-entity>
+      </a-sky> -->
+    </a-entity>
+            <a-entity
+          geometry="primitive:sphere;radius:2;segmentsWidth:8;segmentsHeight:8"
+          material="shader:flat;color:#ffffff;fog:false; src:assets/img/Earth_TEXTURE_CM.jpg"
+          position="2 1 -2"
+          scale="-1 1 1"
+          rotation="0 -90 0"
+</a-entity>
       <a-entity
             geometry="primitive: sphere"
             material="color: blue"
-            position="2 1 2"
-            scale="1 1 -1"
+            position="-2 1 2"
+            scale="1 1 1"
             sound="src: assets/sound/spaceMix-lubdub.mp3; autoplay: true; loop: true; volume: 1">
       </a-entity>
       <a-entity
             geometry="primitive: sphere"
             material="color: yellow"
-            position="-2 1 2"
-            scale="1 1 -1"
+            position="2 1 2"
+            scale="1 1  1"
             sound="src: assets/sound/spaceMix-upbeat.mp3; autoplay: true; loop: true; volume: 1">
       </a-entity>
       <a-light type="point" color="white" position="-4 4 0" intensity="0.5"></a-light>
       <a-light type="point" color="white" position="2 1 0" intensity="1"></a-light>
       <a-light type="point" color="white" position="0 4 0" intensity="0.5"></a-light>
-      <a-sky color="#440099"></a-sky>
+      <!-- <a-sky color="#440099"></a-sky> -->
       <!-- Define the Curve -->
       <a-curve id="track1">
                   <a-curve-point position="-2 1 -2"></a-curve-point>
                   <a-curve-point position="2 1 -2"></a-curve-point>
-                  <a-curve-point position="2 1 2"></a-curve-point>
                   <a-curve-point position="-2 1 2"></a-curve-point>
+                  <a-curve-point position="2 1 2"></a-curve-point>
                   <a-curve-point position="-2 1 -2"></a-curve-point>
       </a-curve>
         <!-- Draw the Curve -->
