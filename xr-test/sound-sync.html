@@ -74,14 +74,14 @@
       <a-entity
             geometry="primitive: sphere"
             material="color: blue"
-            position="-2 -1 0"
+            position="2 -1 0"
             scale="1 1 1"
             sound="src: assets/sound/spaceMix-lubdub.mp3; autoplay: true; loop: true; volume: 1">
       </a-entity>
       <a-entity
             geometry="primitive: sphere"
             material="color: yellow"
-            position="2 -1 0"
+            position="-2 -1 0"
             scale="1 1  1"
             sound="src: assets/sound/spaceMix-upbeat.mp3; autoplay: true; loop: true; volume: 1">
       </a-entity>
@@ -91,11 +91,11 @@
       <!-- <a-sky color="#440099"></a-sky> -->
       <!-- Define the Curve -->
       <a-curve id="track1">
-                  <a-curve-point position="-2 1 -2"></a-curve-point>
-                  <a-curve-point position="2 1 -2"></a-curve-point>
-                  <a-curve-point position="-2 -1 2"></a-curve-point>
-                  <a-curve-point position="2 -1 2"></a-curve-point>
-                  <a-curve-point position="-2 1 -2"></a-curve-point>
+                  <a-curve-point position="-2 1 0"></a-curve-point>
+                  <a-curve-point position="2 1 0"></a-curve-point>
+                  <a-curve-point position="2 -1 0"></a-curve-point>
+                  <a-curve-point position="-2 -1 0"></a-curve-point>
+                  <a-curve-point position="-2 1 0"></a-curve-point>
       </a-curve>
         <!-- Draw the Curve -->
       <a-draw-curve curveref="#track1" material="shader: line; color: blue;"></a-draw-curve>
