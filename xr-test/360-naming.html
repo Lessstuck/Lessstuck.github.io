@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="a-html">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>360° Video using A-Frame</title>
+    <meta name="description" content="360° Vivdeo - A-Frame">
+    <meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui"><meta aframe-injected="" name="mobile-web-app-capable" content="yes"><meta aframe-injected="" name="theme-color" content="black">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="js/aframe-event-set-component.min.js"></script>
+    <script src="js/arrow-key-rotation.js"></script>
+    <script src="js/play-on-window-click.js"></script>
+    <script src="js/play-on-vrdisplayactivate-or-enter-vr.js"></script>
+    <script src="js/hide-once-playing.js"></script>
+</head>
+<body class="a-body">
+    <a-scene class="fullscreen" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
+        <a-videosphere  src="#video"
+                        play-on-window-click
+                        play-on-vrdisplayactivate-or-enter-vr>
+        </a-videosphere>
+        <a-entity laser-controls="hand: left " daydream-controls="" gearvr-controls="" oculus-go-controls="" oculus-touch-controls="" vive-controls="" windows-motion-controls=""></a-entity>
+        <a-entity laser-controls="hand: right " daydream-controls="" gearvr-controls="" oculus-go-controls="" oculus-touch-controls="" vive-controls="" windows-motion-controls=""></a-entity>
+        <a-camera user-height="0" wasd-controls-enabled="false" arrow-key-rotation>
+        </a-camera>
+        <a-assets>
+          <video id="video" autoplay loop crossorigin="anonymous" src="assets/img/naming_flyer4equirect.jpg"
+        </a-assets>
+      </a-scene>
+</body></html>
