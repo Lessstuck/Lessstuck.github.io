@@ -1,22 +1,16 @@
-w{
-  "name": "noneuclideanDemo",
+{
+  "name": "noneuclidean-web",
   "version": "1.0.0",
-  "description": "host for noneuclidean module",
+  "description": "client-side generation of noneuclidean beats",
   "main": "index.js",
+  "dependencies": {
+    "howler": "^2.2.0",
+    "noneuclidean": "^2.1.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Lessstuck.github.io/noneuclidean.git"
-  },
   "author": "Les Stuck",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Lessstuck.github.io/noneuclidean/issues"
-  },
-  "homepage": "https://github.com/Lessstuck.github.io/noneuclidean#readme",
-  "dependencies": {
-    "noneuclidean": "^2.1.0"
-  }
+  "license": "ISC"
 }
