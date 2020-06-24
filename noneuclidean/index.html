@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-
 <html>
-<script src="./node_modules/noneuclidean/index.js"></script>
-<script src="./node_modules/howler/src/howler.core.js"></script>
     <head>
-            <title>noneuclidean demo</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+        <title>noneuclidean demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- <script src="./node_modules/noneuclidean/index.js"></script> -->
+        <script src="./node_modules/howler/src/howler.core.js"></script>    
     </head>
 
     <body>
-    <div class="fl w-50" onmouseenter="mouseEvent1(event)" >
-        <div class="bg-1 h5"></div>
-    </div>
-    <script>
-        var sound = new Howl({
-            src: ['sounds/808_Clap.m4a'],
-            volume: 1.0
-        });
-        function mouseEvent1(e) {
-            sound.play();
-        };
-    </script>
+        <div class="fl w-50" onmouseenter="mouseEvent1(event)" >
+            <div class="bg-1 h5"></div>
+        </div>
+        <script>
+            var sound = new Howl({
+                src: ['sounds/808_Clap.m4a'],
+                volume: 1.0
+            });
+            function mouseEvent1(e) {
+                sound.play();
+            };
+        </script>
     </body>
 
 </html>
