@@ -10,12 +10,18 @@
     </head>
 
     <body>
-        <script>
-            var sound = new Howl({
-                src: ['sounds/808_Clap.webm', 'sounds/808_Clap.m4a']
-            });
+    <div class="fl w-50" onmouseenter="mouseEvent1(event)" >
+        <div class="bg-1 h5"></div>
+    </div>
+    <script>
+        var sound = new Howl({
+            src: ['sounds/808_Clap.m4a'],
+            volume: 1.0
+        });
+        function mouseEvent1(e) {
             sound.play();
-        </script>
+        };
+    </script>
     </body>
 
 </html>
