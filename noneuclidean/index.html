@@ -14,14 +14,14 @@
             <div class="bg-1 h5"></div>
         </div> -->
         <script>
-            var sound = new Howl({
+            const sound = new Howl({
                 src: ['sounds/808_Clap.m4a'],
                 volume: 1.0
             });
             // function mouseEvent1(e) {
             //     sound.play();
             // };
-            setInterval(sound.play, 1000);
+            var playRepeat = setInterval(sound.play, 1000);
         </script>
     </body>
 
