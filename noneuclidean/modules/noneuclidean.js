@@ -31,7 +31,7 @@ export function Track(beatProb)    {
             this.beatCount++; 
         }
     }
-}
+};
 
 export { Track };
 // deleted exports. to support native modules 
