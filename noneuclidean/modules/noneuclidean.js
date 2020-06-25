@@ -5,19 +5,19 @@ export function Track(beatProb)    {
     this.beatProb = [.33, .33, .33];
     this.beatCount = 0;
     this.maxBeats = 0;
-    this.play = function() {
+    this.play = function () {
         // find new maxBeats at end of count
         if (this.beatCount == this.maxBeats) {
             let coinToss = Math.random();
             let beatProbAccum = 0.;
             var maxCount = this.beatProb.length;
             var m = 0;
-            for (m = 0; m < maxCount; m++)    {
+            for (m = 0; m < maxCount; m++) {
                 beatProbAccum = beatProbAccum + this.beatProb[m]
                 if (coinToss < beatProbAccum) {
                     this.maxBeats = m + 1 // lengths 1, 2, 3
                     this.beatCount = 0;
-                    return 0; 
+                    return 0;
                 }
             }
         }
@@ -28,9 +28,9 @@ export function Track(beatProb)    {
         }
         // just count
         else {
-            this.beatCount++; 
-        }
-    }
+            this.beatCount++;
+        };
+    };
 };
 
 export { Track };
