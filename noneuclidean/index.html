@@ -10,10 +10,6 @@
     </head>
 
     <body>
-        <button onclick="startBeat()">Go!</button>
-        <!-- <div class="fl w-50" onmouseenter="mouseEvent1(event)" >
-            <div class="bg-1 h5"></div>
-        </div> -->
         <script>
             const sound = new Howl({
                 src: ['sounds/808_Clap.m4a'],
@@ -22,10 +18,11 @@
             // function mouseEvent1(e) {
             //     sound.play();
             // };
-            function startBeat()    {
+            function startBeat    {
                 setInterval(sound.play, 1000);
             };
         </script>
+        <button onclick="startBeat()">Go!</button>
     </body>
 
 </html>
