@@ -10,6 +10,7 @@
     </head>
 
     <body>
+        <button onclick="startBeat()">Go!</button>
         <!-- <div class="fl w-50" onmouseenter="mouseEvent1(event)" >
             <div class="bg-1 h5"></div>
         </div> -->
@@ -21,7 +22,9 @@
             // function mouseEvent1(e) {
             //     sound.play();
             // };
-            var playRepeat = setInterval(sound.play, 1000);
+            function startBeat()    {
+                setInterval(sound.play, 1000);
+            };
         </script>
     </body>
 
