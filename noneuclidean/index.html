@@ -9,13 +9,17 @@
     <body>
         <audio id="sound1" src="sounds/808_Clap.mp3" preload="auto"></audio>
         <button onclick="startBeat()">Start Beat</button>
+        <button onclick="stopBeat()">Stop Beat</button>
         <script type="text/javascript">
             function play_sound1()  {
                 document.getElementById('sound1').play();
             }
             function startBeat()    {
-                setInterval(play_sound1, 1000);
+                beat = setInterval(play_sound1, 1000);
             };
+            function stopBeat() {
+                clearInterval(beat);
+            }
         </script>
 
     </body>
