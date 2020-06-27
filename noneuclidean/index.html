@@ -3,7 +3,7 @@
     <head>
         <title>noneuclidean demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- <script src="./node_modules/noneuclidean/index.mjs"></script> -->
+        <script type="module" src="./node_modules/noneuclidean/index.mjs"></script>
     </head>
     <body>
         <audio id="sound1" src="sounds/808_Clap.mp3" preload="auto"></audio>
@@ -13,8 +13,8 @@
         <button onclick="startBeat()">Start Beat</button>
         <button onclick="stopBeat()">Stop Beat</button>
         <script type="text/javascript">
-            import { Track } from './modules/noneuclidean.mjs';
-            let track = new Track([.25, .25, .5]);
+            // import { Track } from './modules/noneuclidean.mjs';
+            const track = new Track([.25, .25, .5]);
             function play_sounds()  {
                 play_sound1();
                 play_sound2();
@@ -26,13 +26,13 @@
                 document.getElementById('sound1').play();
             };
             function play_sound2() {
-                    document.getElementById('sound2').play();
+                document.getElementById('sound2').play();
             };
             function play_sound3() {
-                    document.getElementById('sound3').play();
+                document.getElementById('sound3').play();
             };
             function play_sound4() {
-                    document.getElementById('sound4').play();
+                document.getElementById('sound4').play();
             };
             function startBeat()    {
                 beat = setInterval(play_sounds, 1000);
