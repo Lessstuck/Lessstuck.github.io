@@ -22,7 +22,7 @@
                 document.getElementById('sound1').play();
             };
             function startBeat()    {
-                beat = setInterval(play_sounds(), 1000);
+                beat = setInterval(play_sounds, 1000);
             };
             function stopBeat() {
                 clearInterval(beat);
