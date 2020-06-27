@@ -10,6 +10,8 @@
     </head>
 
     <body>
+
+        <button onclick="startBeat(sound)">Go!</button>
         <script>
             const sound = new Howl({
                 src: ['./sounds/808_Clap.m4a'],
@@ -19,7 +21,7 @@
                 setInterval(sound.play, 1000);
             };
         </script>
-        <button onclick="startBeat(sound)">Go!</button>
+
     </body>
 
 </html>
