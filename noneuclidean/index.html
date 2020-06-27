@@ -14,7 +14,7 @@
         <!-- <audio>
             <source src="sounds/808_Clap.mp3">
         </audio> -->
-        <button onclick="startBeat(sound)">Go!</button>
+        <button onclick="startBeat()">Go!</button>
         <script>
             var audio = new Audio();
             audio.src = 'sounds/808_Clap.mp3';
@@ -23,7 +23,7 @@
             //     src: ['sounds/808_Clap.mp3'],
             //     volume: 1.0
             // });
-            function startBeat(sound)    {
+            function startBeat()    {
                 setInterval(audio.play, 1000);
             };
         </script>
