@@ -11,20 +11,23 @@
     </head>
 
     <body>
-        <!-- <audio>
-            <source src="sounds/808_Clap.mp3">
-        </audio> -->
+        
+        <audio id="sound1" src="sounds/808_Clap.mp3" preload="auto"></audio>
+        <a href="javascript:play_sound1();">Play one sound</a>
         <!-- <button onclick="startBeat()">Go!</button> -->
-        <script>
-            const audio = new Audio();
-            audio.src = 'sounds/808_Clap.mp3';
-            audio.play();
+        <script type="text/javascript">
+            function play_sound1()  {
+                document.getElementById('sound1').play();
+            }
+            // const audio = new Audio();
+            // audio.src = 'sounds/808_Clap.mp3';
+            // audio.play();
             // const sound = new Howl({
             //     src: ['sounds/808_Clap.mp3'],
             //     volume: 1.0
             // });
             // function startBeat()    {
-            setInterval(audio.play, 1000);
+            // setInterval(audio.play, 1000);
             // };
         </script>
 
