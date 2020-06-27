@@ -1,5 +1,3 @@
-let count = Math.random(5);
-
 // added export to support native modules
 export function Track(beatProb)    {
     this.beatProb = [.33, .33, .33];
