@@ -4,23 +4,28 @@
         <title>noneuclidean demo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- <script src="./node_modules/noneuclidean/index.js"></script> -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js"
-            integrity="sha256-PrKsBZiUEiwLG+it4CWjMZfZ4AkcWEd1NU46fZtGS5c=" crossorigin="anonymous"></script>  
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js"
+            integrity="sha256-PrKsBZiUEiwLG+it4CWjMZfZ4AkcWEd1NU46fZtGS5c=" crossorigin="anonymous"></script>   -->
         <!-- <script> type="module" src="./main.js" </script> -->
         <!-- <script> import { Track } from './modules/noneuclidean.js'; </script> -->
     </head>
 
     <body>
-
-        <button onclick="startBeat(sound)">Go!</button>
+        <!-- <audio>
+            <source src="sounds/808_Clap.mp3">
+        </audio> -->
+        <!-- <button onclick="startBeat(sound)">Go!</button> -->
         <script>
-            const sound = new Howl({
-                src: ['sounds/808_Clap.mp3'],
-                volume: 1.0
-            });
-            function startBeat(sound)    {
-                setInterval(sound.play, 1000);
-            };
+            var audio = new Audio();
+            audio.src = 'sounds/808_Clap.mp3';
+            audio.play();
+            // const sound = new Howl({
+            //     src: ['sounds/808_Clap.mp3'],
+            //     volume: 1.0
+            // });
+            // function startBeat(sound)    {
+            //     setInterval(sound.play, 1000);
+            // };
         </script>
 
     </body>
