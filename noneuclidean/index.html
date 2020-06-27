@@ -16,9 +16,9 @@
         <a href="javascript:play_sound1();">Play one sound</a>
         <!-- <button onclick="startBeat()">Go!</button> -->
         <script type="text/javascript">
-            // function play_sound1()  {
-            //     document.getElementById('sound1').play();
-            // }
+            function play_sound1()  {
+                document.getElementById('sound1').play();
+            }
             // const audio = new Audio();
             // audio.src = 'sounds/808_Clap.mp3';
             // audio.play();
@@ -27,7 +27,7 @@
             //     volume: 1.0
             // });
             function startBeat()    {
-            setInterval(document.getElementById('sound1').play(), 1000);
+            setInterval(play_sound1(), 1000);
             };
         </script>
 
