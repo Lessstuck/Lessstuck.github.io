@@ -1,3 +1,3 @@
 import { Track } from './modules/noneuclidean.js';
 
-let Track = create('Track');
+let track = create('Track');
