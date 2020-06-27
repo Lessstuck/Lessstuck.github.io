@@ -16,16 +16,16 @@
         </audio> -->
         <!-- <button onclick="startBeat()">Go!</button> -->
         <script>
-            var audio = new Audio();
+            const audio = new Audio();
             audio.src = 'sounds/808_Clap.mp3';
             audio.play();
             // const sound = new Howl({
             //     src: ['sounds/808_Clap.mp3'],
             //     volume: 1.0
             // });
-            // function startBeat()    {
-            // setInterval(audio.play, 1000);
-            // };
+            function startBeat()    {
+            setInterval(audio.play, 1000);
+            };
         </script>
 
     </body>
