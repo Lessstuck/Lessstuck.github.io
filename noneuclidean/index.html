@@ -15,18 +15,18 @@
         <button onclick="stopBeat()">Stop Beat</button>
         <script type="text/javascript">
             function play_sounds()  {
+                play_sound1();
                 console.log("play_sounds");
-            }
-
+            };
             function play_sound1()  {
                 document.getElementById('sound1').play();
-            }
+            };
             function startBeat()    {
-                beat = setInterval(play_sound1, 1000);
+                beat = setInterval(play_sounds(), 1000);
             };
             function stopBeat() {
                 clearInterval(beat);
-            }
+            };
         </script>
 
     </body>
