@@ -31,6 +31,5 @@ export function Track(beatProb)    {
     };
 };
 
-// export { Track };
 // deleted exports. to support native modules 
 // exports.Track = Track;
