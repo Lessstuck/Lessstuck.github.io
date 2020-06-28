@@ -3,7 +3,7 @@ import { Track } from "./modules/noneuclidean.mjs";
 const track = new Track([.25, .25, .5]);
 track.play();
 
-{/* <script type="text/javascript">; */}
+// {/* <script type="text/javascript">; */}
 
             function play_sounds()  {
 
@@ -25,10 +25,10 @@ track.play();
             function play_sound4() {
         document.getElementById('sound4').play();
             };
-            function startBeat()    {
+           export function startBeat()    {
         beat = setInterval(play_sounds, 1000);
             };
-            function stopBeat() {
+            export function stopBeat() {
         clearInterval(beat);
             };
-        {/* </script> */}
+        // {/* </script> */}
