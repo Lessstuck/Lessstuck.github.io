@@ -9,16 +9,16 @@ for (var i = 0; i < trackCount; i++)    {
 }
 
 function play_sounds()  {
-    if (track[0].play() == 1) {
+    if (tracks[0].play() == 1) {
         play_sound1();
     };
-    if (track[1].play() == 1) {
+    if (tracks[1].play() == 1) {
         play_sound2();
     };
-    if (track[2].play() == 1) {
+    if (tracks[2].play() == 1) {
         play_sound3();
     };
-    if (track[3].play() == 1) {
+    if (tracks[3].play() == 1) {
         play_sound4();
     };
 };
