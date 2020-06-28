@@ -2,7 +2,7 @@ import { Track } from "./modules/noneuclidean.mjs";
 
 const trackCount = 4;
 var tracks = [];
-for (i = 0; i < trackCount; i++)    {
+for (var i = 0; i < trackCount; i++)    {
     let newTrack = new Track([.25, .25, .25, .25]);
     newTrack.play();
     tracks.push(newTrack);
