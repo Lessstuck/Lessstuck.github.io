@@ -25,6 +25,7 @@ function play_sound3() {
 function play_sound4() {
     document.getElementById('sound4').play();
 };
+beat(0);
 document.getElementById("startButton").onclick = beat(1);
 document.getElementById("stopButton").onclick = beat(0);
 function beat(onoff) {
