@@ -40,5 +40,5 @@ function beat(onoff = false)  {
         clearInterval(beatId);
     }
 };
-            
+beat(onoff);
         // {/* </script> */}
