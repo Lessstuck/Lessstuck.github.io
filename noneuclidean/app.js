@@ -1,5 +1,6 @@
 import { Track } from "./modules/noneuclidean.mjs";
 
+// create array of tracks
 const trackCount = 4;
 var tracks = [];
 for (var i = 0; i < trackCount; i++)    {
@@ -8,6 +9,7 @@ for (var i = 0; i < trackCount; i++)    {
     tracks.push(newTrack);
 }
 
+// play sounds if play() == 1
 function play_sounds()  {
     if (tracks[0].play() == 1) {
         play_sound1();
@@ -22,6 +24,8 @@ function play_sounds()  {
         play_sound4();
     };
 };
+
+// call play() method on audio element
 function play_sound1()  {
     document.getElementById('sound1').play();
 };
@@ -35,12 +39,14 @@ function play_sound4() {
     document.getElementById('sound4').play();
 };
 
+// toggle button to start/stop rhythm
 var onoff = false;
 document.getElementById("startStopButton").onclick = () => {
     onoff = !onoff;
     beat(onoff);
 };
 
+// pulse
 var beatId = null;
 function beat(onoff)  {
     if (onoff == true) {
