@@ -4,12 +4,14 @@ const track = new Track([.25, .25, .5]);
 track.play();
 
 function play_sounds()  {
-
-play_sound1();
-        play_sound2();
-        play_sound3();
-        play_sound4();
-        console.log("play_sounds");
+    if (track.play() == 1) {
+        play_sound1();
+    }
+    // play_sound1();
+    // play_sound2();
+    // play_sound3();
+    // play_sound4();
+    console.log("play_sounds");
 };
 function play_sound1()  {
     document.getElementById('sound1').play();
