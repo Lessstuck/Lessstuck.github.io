@@ -26,7 +26,7 @@ function play_sound4() {
     document.getElementById('sound4').play();
 };
 
-bool onoff = false;
+var onoff = false;
 document.getElementById("startStopButton").onclick = () => {
     onoff = !onoff;
 };
