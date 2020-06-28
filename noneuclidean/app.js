@@ -29,6 +29,7 @@ function play_sound4() {
 var onoff = false;
 document.getElementById("startStopButton").onclick = () => {
     onoff = !onoff;
+    beat(onoff);
 };
 
 // document.getElementById("stopButton").onclick = beat(0);
@@ -40,5 +41,5 @@ function beat(onoff = false)  {
         clearInterval(beatId);
     }
 };
-beat(onoff);
+
         // {/* </script> */}
