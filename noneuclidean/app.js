@@ -32,14 +32,14 @@ document.getElementById("startStopButton").onclick = () => {
     beat(onoff);
 };
 
-// document.getElementById("stopButton").onclick = beat(0);
-function beat(onoff = false)  {
+var beatId = null;
+function beat(onoff)  {
     if (onoff == true) {
-        var beatId = setInterval(play_sounds, 1000);
+        beatId = setInterval(play_sounds, 1000);
     }
     else {
         clearInterval(beatId);
-    }
+    };
 };
 
         // {/* </script> */}
