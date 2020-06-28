@@ -25,10 +25,15 @@ function play_sound3() {
 function play_sound4() {
     document.getElementById('sound4').play();
 };
-document.getElementById("startButton").onclick = beat(1);
-document.getElementById("stopButton").onclick = beat(0);
-function beat(onoff = 0)  {
-    if (onoff == 1) {
+
+bool onoff = false;
+document.getElementById("startStopButton").onclick = () => {
+    onoff = !onoff;
+};
+
+// document.getElementById("stopButton").onclick = beat(0);
+function beat(onoff = false)  {
+    if (onoff == true) {
         var beatId = setInterval(play_sounds, 1000);
     }
     else {
