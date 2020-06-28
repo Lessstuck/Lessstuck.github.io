@@ -35,7 +35,7 @@ document.getElementById("startStopButton").onclick = () => {
 var beatId = null;
 function beat(onoff)  {
     if (onoff == true) {
-        beatId = setInterval(play_sounds, 1000);
+        beatId = setInterval(play_sounds, 125);
     }
     else {
         clearInterval(beatId);
