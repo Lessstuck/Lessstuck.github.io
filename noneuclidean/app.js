@@ -1,17 +1,26 @@
 import { Track } from "./modules/noneuclidean.mjs";
 
-const track = new Track([.25, .25, .5]);
-track.play();
+const trackCount = 4;
+var tracks = [];
+for (i = 0; i < trackCount; i++)    {
+    let newTrack = new Track([.25, .25, .25, .25]);
+    newTrack.play();
+    tracks.push(newTrack);
+}
 
 function play_sounds()  {
-    if (track.play() == 1) {
+    if (track[0].play() == 1) {
         play_sound1();
-    }
-    // play_sound1();
-    // play_sound2();
-    // play_sound3();
-    // play_sound4();
-    console.log("play_sounds");
+    };
+    if (track[1].play() == 1) {
+        play_sound2();
+    };
+    if (track[2].play() == 1) {
+        play_sound3();
+    };
+    if (track[3].play() == 1) {
+        play_sound4();
+    };
 };
 function play_sound1()  {
     document.getElementById('sound1').play();
