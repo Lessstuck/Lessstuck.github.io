@@ -3,8 +3,6 @@ import { Track } from "./modules/noneuclidean.mjs";
 const track = new Track([.25, .25, .5]);
 track.play();
 
-// {/* <script type="text/javascript">; */}
-
 function play_sounds()  {
 
 play_sound1();
@@ -41,5 +39,3 @@ function beat(onoff)  {
         clearInterval(beatId);
     };
 };
-
-        // {/* </script> */}
